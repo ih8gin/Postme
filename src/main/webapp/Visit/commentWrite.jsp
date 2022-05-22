@@ -19,7 +19,7 @@
     <input type="button" value="点赞">${post.likeNum}<br>
 </div>
 <div>
-    <form action="/myWeb_war/commentWriteServlet" method="post">
+    <form action="/myWeb_war/commentAddServlet" method="post">
         <input type="hidden" name="pid" value="${post.pid}">
         <textarea name="content" cols="20" rows="5"></textarea><br>
         <input type="submit" name="submit" value="评论">

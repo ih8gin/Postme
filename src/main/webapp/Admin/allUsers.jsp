@@ -31,7 +31,7 @@
             <c:if test="${user.status == 0}">
                 <td>封禁</td>
             </c:if>
-            <td><a href="/myWeb_war/userSelectServlet?uid=${user.uid}">修改</a>
+            <td><a href="/myWeb_war/userSelectForUpdateServlet?uid=${user.uid}">修改</a>
                 <a href="/myWeb_war/userDeleteServlet?uid=${user.uid}">删除</a></td>
         </tr>
     </c:forEach>

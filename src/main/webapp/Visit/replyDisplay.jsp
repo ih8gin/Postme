@@ -21,7 +21,7 @@
         <tr>
             <td>点赞${post.likeNum}</td>
             <td>回复${post.replyNum}</td>
-            <td><a href="/myWeb_war/ypostSelectServlet?pid=${post.pid}">点击评论</a></td>
+<%--            <td><a href="/myWeb_war/postSelectForCommentServlet?pid=${post.pid}">点击评论</a></td>--%>
         </tr>
     </table>
     <hr>
@@ -33,7 +33,7 @@
         <tr>
             <td>点赞${comment.likeNum}</td>
             <td>回复${comment.replyNum}</td>
-            <td><a href="/myWeb_war/xcommentSelectServlet?pid=${comment.pid}&cid=${comment.cid}">点击回复这条评论</a></td>
+            <td><a href="/myWeb_war/commentSelectForReplyServlet?pid=${comment.pid}&cid=${comment.cid}">点击回复这条评论</a></td>
         </tr>
     </table>
     <hr>
@@ -44,7 +44,7 @@
     <table>
         <tr>
             <td>点赞${reply.likeNum}</td>
-            <td><a href="/myWeb_war/replySelectServlet?pid=${reply.pid}&cid=${reply.cid}&rid=${reply.rid}">点击回复这条回复</a></td>
+            <td><a href="/myWeb_war/replySelectForReplyServlet?pid=${reply.pid}&cid=${reply.cid}&rid=${reply.rid}">点击回复这条回复</a></td>
         </tr>
     </table>
     <hr>

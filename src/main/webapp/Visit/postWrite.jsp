@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>发贴</h1>
-<form action="/myWeb_war/postWriteServlet" method="post">
+<form action="/myWeb_war/postAddServlet" method="post">
     <label for="title">主题</label><input id="title" type="text" name="title"><br>
     <label for="content">正文</label><br>
     <textarea id="content" name="content" cols="20" rows="5"></textarea><br>
