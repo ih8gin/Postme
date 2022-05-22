@@ -2,7 +2,7 @@
 模拟贴吧
 
 ## unfinished 尚未完成的部分
-thumbup 
+thumbup <br>
 点赞
 record reply_nums and visit_nums 
 回复数、访问数
