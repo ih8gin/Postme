@@ -1,7 +1,7 @@
 # Postme
 模拟贴吧
 <hr>
-<h2><b>unfinished 尚未完成的部分</b>
+## unfinished 尚未完成的部分
 thumbup 
 <br>  点赞
 <br>  record reply_nums and visit_nums 
