@@ -1,6 +1,6 @@
 # Postme
 模拟贴吧
-<hr>
+
 ## unfinished 尚未完成的部分
 thumbup 
 <br>  点赞
