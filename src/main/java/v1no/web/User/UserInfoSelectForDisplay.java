@@ -9,6 +9,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.Enumeration;
 import java.util.List;
 
 @WebServlet("/userInfoSelectForDisplayServlet")
@@ -23,8 +24,16 @@ public class UserInfoSelectForDisplay extends HttpServlet {
          * 从post中查该用户发送的贴
          * 检查是否是本人，不是本人则隐藏修改选项
          */
-        HttpSession session = request.getSession();
-        int uid = (int)session.getAttribute("visitor");
+        int uid = 0;
+        try{
+            uid = Integer.parseInt(request.getParameter("uid"));
+        } catch (NumberFormatException | NullPointerException e) {
+            System.out.println("用户查看他人主页");
+        }
+        if(uid == 0){
+            HttpSession session = request.getSession();
+            uid = (int)session.getAttribute("visitor");
+        }
         User user = userServer.selectByUid(uid);
         List<Post> posts = postServer.selectByUid(user.getUid());
 
