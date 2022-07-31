@@ -18,3 +18,8 @@ thumbup
 <br>  首页个性化推荐
 <br>  filter for login-required options
 <br>  filter登陆状态检查
+
+
+## 计划以后优化的方向
+使用vue设计页面
+<br> 增加搜索功能，使用es
