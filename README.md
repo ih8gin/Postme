@@ -23,6 +23,7 @@ thumbup
 ## 计划以后优化的方向
 使用vue设计页面
 <br> 增加搜索功能，使用es
+<br> 使用es分担mysql的压力，隔离读操作，写操作发生时同步更新
 <br> 分层分项目：static-web-body
 <br> ？redis存储热点数据
 <br> ？多线程查询
