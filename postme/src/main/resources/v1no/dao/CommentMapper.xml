@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="v1no.dao.CommentMapper">
+    <resultMap id="CommentResultMap" type="v1no.pojo.Comment">
+        <result column="reply_num" property="replyNum"></result>
+        <result column="like_num" property="likeNum"></result>
+    </resultMap>
+
+    <insert id="insert">
+        insert into comments(uid, username, pid, time, content)
+        values (#{uid}, #{username}, #{pid}, current_timestamp(), #{content})
+    </insert>
+
+    <delete id="deleteByCid">
+        delete from comments where cid = #{cid}
+    </delete>
+
+    <select id="selectTopN" resultMap="CommentResultMap">
+        select * from comments
+            limit #{num}
+    </select>
+
+    <select id="selectByCid" resultMap="CommentResultMap">
+        select * from comments
+        where cid = #{cid}
+    </select>
+
+    <select id="selectByUid" resultMap="CommentResultMap">
+        select * from comments
+        where uid = #{uid}
+    </select>
+
+    <select id="selectByPid" resultMap="CommentResultMap">
+        select * from comments
+        where pid = #{pid}
+    </select>
+</mapper>
