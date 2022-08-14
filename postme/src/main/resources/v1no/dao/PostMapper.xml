@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="v1no.dao.PostMapper">
+    <resultMap id="PostResultMap" type="v1no.pojo.Post">
+        <result column="post_time" property="postTime"></result>
+        <result column="update_time" property="updateTime"></result>
+        <result column="visit_num" property="visitNum"></result>
+        <result column="reply_num" property="replyNum"></result>
+        <result column="like_num" property="likeNum"></result>
+    </resultMap>
+    <insert id="insert">
+        insert into posts(uid, username, post_time, update_time, title, content)
+        values (#{uid}, #{username}, current_timestamp(), current_timestamp(), #{title}, #{content})
+    </insert>
+
+    <update id="update">
+        update posts
+        set update_time = now(),
+            title = #{title},
+            content = #{content},
+            status = #{status}
+        where pid = #{pid}
+    </update>
+
+    <select id="selectTopN" resultMap="PostResultMap">
+        select * from posts
+            limit #{num}
+    </select>
+
+    <select id="selectByPid" resultMap="PostResultMap">
+        select * from posts
+        where pid = #{pid}
+    </select>
+
+    <select id="selectByUid" resultMap="PostResultMap">
+        select * from posts
+        where uid = #{uid}
+    </select>
+
+    <delete id="deleteByPid">
+        delete from posts where pid = #{pid}
+    </delete>
+</mapper>
